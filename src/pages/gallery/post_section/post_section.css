@@ -1,0 +1,13 @@
+.about{
+  padding: 70px 0 60px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.about .gallery_title {
+  margin-bottom: 50px;
+}
+
+.about .gallery_title .page_title_box h2{
+  color: #000;
+}

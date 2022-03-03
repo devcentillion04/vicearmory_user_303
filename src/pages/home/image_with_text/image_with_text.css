@@ -1,0 +1,59 @@
+.image_with_text_section {
+  padding: 50px 0 10px;
+  overflow: hidden;
+}
+
+.image_with_text_section .image_with_text_box h4{
+  font-family: 'Ansley Display';
+  font-size: 35px;
+  color: #212F64;
+  line-height: 53px;
+}
+
+.image_with_text_section .image_with_text_box p{
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 32px;
+}
+
+.image_with_text_section .image_with_text_box .image_box img{
+  position: relative;
+  top: -95px;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 1399px){
+  .image_with_text_section .image_with_text_box h4{
+    font-size: 30px;
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+  .image_with_text_section {
+    padding: 50px 0 50px;
+  }
+  .image_with_text_section .image_with_text_box_1{
+    order: 2;
+  }
+  .image_with_text_section .image_with_text_box_2{
+    order: 1;
+  }
+  .image_with_text_section .image_with_text_box .image_box{
+    margin-bottom: -60px;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .image_with_text_section .image_with_text_box h4{
+    font-size: 25px;
+    line-height: 45px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .image_with_text_section .image_with_text_box h4{
+    font-size: 22px;
+    line-height: 42px;
+  }
+}

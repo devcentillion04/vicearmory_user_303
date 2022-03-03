@@ -1,0 +1,36 @@
+.gallery_section{
+  padding: 70px 0 60px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.gallery_section .gallery_title {
+  margin-bottom: 50px;
+}
+
+.gallery_section .gallery_title .page_title_box h2{
+  color: #fff;
+}
+
+.gallery_section .gallery_post .post_box{
+  margin-bottom: 30px;
+}
+
+.gallery_section .gallery_post .post_box .box_content{
+  box-shadow: 0px 15px 26.3px 0px rgba(0,0,0,0.09);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.gallery_section .gallery_post .post_box .box_content .content_img img{
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px){
+  .gallery_section .gallery_post .post_box {
+    margin-bottom: 30px;
+  }
+  .gallery_section .gallery_post .post_box:last-of-type{
+    margin-bottom: 0;
+  }
+}

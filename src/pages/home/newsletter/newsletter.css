@@ -1,0 +1,68 @@
+.newsletter_section {
+  padding-bottom: 50px;
+}
+.newsletter_section .newsletter_box .box_bg {
+  background-color: #000;
+  border-radius: 20px;
+  border-top-left-radius: 130px;
+  padding: 100px 30px;
+}
+
+.newsletter_section .newsletter_box .box_bg h3{
+  color: #fff;
+  font-weight: bold;
+  font-size: 33px;
+  max-width: 770px;
+  margin: 0 auto 50px;
+}
+
+.newsletter_section .newsletter_box .box_bg form .form_box.input-box{
+  max-width: 420px;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.newsletter_section .newsletter_box .box_bg form .form_box input{
+  background-color: #fff;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  padding: 22px 20px;
+  border-radius: 10px;
+}
+
+.newsletter_section .newsletter_box .box_bg form .form_box.btn-box{
+  max-width: 180px;
+  width: 100%;
+}
+
+.newsletter_section .newsletter_box .box_bg form .form_box button{
+  background-color: #212F64;
+  border: 1px solid #212F64;
+  font-weight: 500;
+  padding: 22px 20px;
+  border-radius: 10px;
+  color: #fff;
+  width: 100%;
+}
+
+.newsletter_section .newsletter_box .box_bg form .form_box button:hover{
+  background-color: transparent;
+  border-color: #fff;
+}
+
+@media only screen and (max-width: 575px){
+  .newsletter_section .newsletter_box .box_bg{
+    border-radius: 0;
+    padding: 50px 20px;
+  }
+  .newsletter_section .newsletter_box .box_bg form .form_box.input-box{
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .newsletter_section .newsletter_box .box_bg h3{
+    font-size: 25px;
+  }
+}

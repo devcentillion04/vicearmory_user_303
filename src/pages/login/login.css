@@ -1,0 +1,49 @@
+.login .newsletter_section .newsletter_box .box_bg{
+    background-color: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.login .newsletter_section .newsletter_box .box_bg h3{
+    color: #000;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .form_box.input-box{
+    max-width: 100%;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .form_box input{
+    border: 1px solid #212F64;
+    max-width: 420px;
+    margin-bottom: 25px;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .form_box button:hover{
+    border-color:#212F64;
+    color: #212F64;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .forget-box{
+    margin-top: -18px;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .forget-box a{
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 410px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #212F64;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .or-box{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.login .newsletter_section .newsletter_box .box_bg form .sign-box a{
+    text-align: center;
+}

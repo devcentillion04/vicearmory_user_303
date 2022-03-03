@@ -1,0 +1,28 @@
+#win_loader{
+  background-color: #202020;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+#win_loader .wls_dot_box {
+  max-width: 350px;
+}
+
+#win_loader.loader_hide{
+  opacity: 0;
+}
+
+.loader.loader_none{
+  display: none;
+}

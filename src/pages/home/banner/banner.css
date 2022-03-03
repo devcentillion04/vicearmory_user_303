@@ -1,0 +1,16 @@
+.banner_section .owl-nav{
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  right: 0;
+}
+.banner_section .owl-nav button{
+  opacity: 1;
+  color: #fff !important;
+  font-size: 25px !important;
+}
+.banner_section .owl-nav button:hover{
+  background-color: transparent !important;
+}

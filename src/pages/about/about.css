@@ -1,0 +1,28 @@
+.about .gallery_title .page_title_box p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 32px;
+}
+
+.about .about_meet_team{
+    margin-bottom: 30px;
+}
+
+.about .meet_our_title{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about .image_with_text_section{
+    padding: 0px 0 50px;
+}
+
+.about .meet_image_with_text_section{
+    padding: 10px 0 50px;
+}
+
+.about .image_with_text_section .image_with_text_box .image_box img{
+    width: 100%;
+    border-radius: 20px;
+    top: 0;
+}

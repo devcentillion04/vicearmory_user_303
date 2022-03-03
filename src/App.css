@@ -1,0 +1,130 @@
+body {
+  font-family: "Gotham";
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
+button {
+  outline: none;
+  box-shadow: none !important;
+}
+
+header.sticky + .sticky_header {
+  padding-top: 130px;
+}
+
+.page_title .page_title_box h2 {
+  font-family: "Ansley Display";
+  font-size: 35px;
+}
+
+.animate__animated {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.animate__animated.fadeInUp,
+.animate__animated.animate__fadeIn,
+.animate__animated.animate__slideInUp,
+.animate__animated.animate__slideInLeft,
+.animate__animated.animate__slideInRight {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 991px) {
+  .page_title .page_title_box {
+    margin-bottom: 30px;
+  }
+  .page_title .page_title_box h2 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page_title .page_title_box {
+    margin-bottom: 0;
+  }
+  .page_title .page_title_box h2 {
+    font-size: 22px;
+  }
+}
+
+.nav-item a:hover {
+  font-weight: bold !important;
+}
+ul {
+  list-style: none !important;
+}
+
+.copyright p {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px;
+  border-top: 1px solid #c9c6c6;
+}
+.footer_nav .footer_box .nav_box h5 {
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+.nav_box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav_box ul li a {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+.bg_footer {
+  background-image: url("https://t4.ftcdn.net/jpg/03/02/39/89/360_F_302398979_XqqGoRl7nKQyue6flRBkudckUsHYR6Mo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px;
+}
+.bg_footer_content {
+  background-color: #fff;
+  opacity: 0.8;
+}
+.page_header_name {
+  border-bottom: solid 2px rgb(173, 169, 169);
+}
+.serchbox-on-table {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  justify-content: flex-end;
+}
+.select-and-search {
+  display: flex;
+}
+.btn-outline-dark {
+  color: #333;
+  background-color: #fff;
+  border-color: #333;
+}
+.btn-outline-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #fff;
+}
+thead {
+  background-color: rgb(51, 51, 51);
+  color: #fff;
+}
+.btn-primary {
+  background-color: #212f64;
+  border-color: #212f64;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}

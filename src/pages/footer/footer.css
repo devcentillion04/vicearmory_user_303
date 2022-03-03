@@ -1,0 +1,82 @@
+footer{
+  padding: 50px 0;
+}
+
+footer .footer_logo .logo_box .logo_text p{
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 0;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+footer .footer_nav .nav_box h5{
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+footer .footer_nav .nav_box ul{
+  list-style: none;
+  padding: 0;
+}
+
+footer .footer_nav .nav_box ul li{
+  margin-bottom: 5px;
+}
+
+footer .footer_nav .nav_box ul li a{
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+footer .footer_social .social_box ul li{
+  margin-right: 15px;
+}
+
+footer .footer_social .social_box ul li:last-of-type{
+  margin-right: 0;
+}
+
+footer .footer_social .social_box  ul li a:hover{
+  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.10);
+}
+
+footer .copyright{
+  padding: 50px 0 0;
+}
+
+footer .copyright p{
+  color: #212F64;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 991px){
+  footer {
+    padding: 20px 0 50px;
+  }
+  footer  .footer_box{
+    margin-top: 30px;
+  }
+  footer .footer_nav .nav_box ul{
+    justify-content: center;
+  }
+  footer .copyright{
+    padding: 10px 0 0;
+    margin-bottom: -20px;
+  }
+}
+
+@media only screen and (max-width: 575px){
+  footer {
+    padding: 0px 0 50px;
+    margin-top: -40px;
+    text-align: center;
+  }
+  footer .footer_logo .logo_box .logo_text p{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
