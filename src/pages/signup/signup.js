@@ -2,7 +2,7 @@ import "./signup.css";
 import axios from "axios";
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
-
+import {ApiUrl } from "./../constant";
 // import other section
 
 const Signup = () => {
@@ -19,11 +19,12 @@ const Signup = () => {
     var confirmpassword = document.getElementById(
       "txtConfirmPasswordReg"
     ).value;
+    var phoneValidate = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     var validateemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var validatepassword =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (firstNameReg === null || firstNameReg === "") {
-      alert("EmaFirst Name can't be empty.");
+      alert("First Name can't be empty.");
       return false;
     } else if (middleNameReg === null || middleNameReg === "") {
       alert("Middle Name can't be empty.");
@@ -33,6 +34,9 @@ const Signup = () => {
       return false;
     } else if (mobileNoReg === null || mobileNoReg === "") {
       alert("Mobile Number can't be empty.");
+      return false;
+    }  else if (!mobileNoReg.match(phoneValidate)) {
+      alert("Mobile Number should be correct formate.");
       return false;
     } else if (!emailReg.match(validateemail)) {
       alert('Email should be in correct format as "xyz@abc.com/in/org".');
@@ -57,7 +61,7 @@ const Signup = () => {
       return false;
     } else {
       axios
-        .post(`https://localhost:44369/api/v1/User/CreateUser`, {
+        .post(`${ApiUrl}User/UserSignup`, {
           userName:firstNameReg + lastNameReg,
           firstName:firstNameReg,
           lastName:lastNameReg,
@@ -74,6 +78,8 @@ const Signup = () => {
         .then(
           (response) => {
             if (response) {
+              console.log('response',response)
+              alert(response.data)
               afterSignup();
             }
           },
@@ -84,7 +90,9 @@ const Signup = () => {
         );
     }
   }
-  const afterSignup = useCallback(() => history.push("/"), [history]);
+  const afterSignup = useCallback(() =>{ history.push("/");
+  window.location.reload(true);
+}, [history]);
   return (
     <section className="login">
       <section
@@ -126,7 +134,7 @@ const Signup = () => {
                   </div>
                   <div className="form_box input-box">
                     <input
-                      type="number"
+                      type="text"
                       id="txtMobileReg"
                       className="form_box_input input"
                       placeholder="Your Mobile No"

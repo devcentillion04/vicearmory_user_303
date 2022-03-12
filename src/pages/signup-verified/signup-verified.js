@@ -2,7 +2,7 @@ import "./signup-verified.css";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-
+import { ApiUrl } from "./../constant";
 // import other section
 
 const SignupVerified = () => {
@@ -20,7 +20,7 @@ const SignupVerified = () => {
   const history = useHistory();
   const verfiy = () => {
     axios
-      .post(`https://localhost:44369/api/v1/User/VerifyUser`, {
+      .post(`${ApiUrl}User/VerifyUser`, {
         email: name,
         id: id,
         firstName: "Vice",
@@ -45,7 +45,9 @@ const SignupVerified = () => {
   function handleSubmit(e) {
     e.preventDefault();
   }
-  const afterVerify = useCallback(() => history.push("/"), [history]);
+  const afterVerify = useCallback(() => { history.push("/");
+  window.location.reload(true);
+}, [history]);
   return (
     <section className="login">
     {verfiy && <div className="text-center p-5">

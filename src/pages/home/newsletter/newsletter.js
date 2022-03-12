@@ -1,6 +1,6 @@
 import './newsletter.css';
 import axios from 'axios';
-
+import { ApiUrl} from './../../constant';
 // import other section
 
 function Newsletter() {
@@ -20,13 +20,11 @@ function Newsletter() {
       );
       return false;
     } else {
-      axios.post(`https://localhost:44369/api/v1/Newsletter/CreateNewsletter`, {
-        email: emailSubscribe,
-        })
+      axios.post(`${ApiUrl}Newsletter/SendNewsLetter?email=${emailSubscribe}`, null)
         .then((response)=> {
           if(response) {
-            alert('Suceessfully create news.');
-            console.log('CreateNewsletters',response);            
+            alert('Subscribed Successfully.');
+            document.getElementById("txtMailSubscribe").value = "";
           }
         }, (error) => {
           alert('Something Went Wrong! Please try again.');
@@ -47,7 +45,7 @@ function Newsletter() {
                   <input type="email" id="txtMailSubscribe" className="form_box_input input" placeholder="Your email" />
                 </div>
                 <div className="form_box btn-box">
-                  <button type="submit" className="btn">Subscribe</button>
+                  <button type="submit" className="btn mb-4">Subscribe</button>
                 </div>
               </form>
             </div>

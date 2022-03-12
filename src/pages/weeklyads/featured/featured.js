@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Document } from 'react-pdf';
 import { Pagination } from "@material-ui/lab";
 import usePagination from "./../../pagination/pagination";
+import { ApiUrl,DisplayUrl} from './../../constant';
 
 // import other section
 
@@ -12,7 +13,7 @@ function Featured() {
  
   const [weeksData, setWeeksData] = useState([])
   const fetchData = async () => {
-    let { data } = await axios.get(`https://localhost:44369/api/v1/WeeklyAds/GetPdf`)
+    let { data } = await axios.get(`${ApiUrl}WeeklyAds/GetPdf`)
     if (data) {
       if(data.length>0){
       setWeeksData(data);
@@ -86,14 +87,14 @@ function Featured() {
               <div className="box_content">
                 <div className="content_img">
                   <object
-                    data={item.filePath}
+                    data={DisplayUrl+item.filePath}
                     type="application/pdf"
                     width="500"
                     height="678"
                   >
 
                     <iframe
-                      src={item.filePath}
+                      src={DisplayUrl+item.filePath}
                       width="500"
                       height="678"
                     >

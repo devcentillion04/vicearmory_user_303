@@ -47,23 +47,3 @@
 .login .newsletter_section .newsletter_box .box_bg form .sign-box a{
     text-align: center;
 }
-.blue-btn{
-    background-color: #212F64;
-    border: 1px solid #212F64;
-    font-weight: 500;
-    padding: 22px 20px;
-    border-radius: 10px;
-    color: #fff;
-    width: 425;
-}
-.blue-text{
-    border: 1px solid #212F64;
-    width: 630px;
-    margin-bottom: 25px;
-    height: 60px;
-    border-radius: 10px;
-    padding: 5px 25px;
-}
-.text-red{
-    color: red;
-}

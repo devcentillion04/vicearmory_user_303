@@ -1,7 +1,8 @@
 import "./featured.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Modal, Button, Form } from "react-bootstrap";
+import {ApiUrl} from '../../constant';
+import { Modal } from "react-bootstrap";
 // import other section
 
 const Featured = () => {
@@ -10,8 +11,9 @@ const Featured = () => {
   const [dialogOpen, isDialogOpen] = useState(false);
   const [productTitle, setProductTitle] = useState({});
   const [getFiles, setGetFiles] = useState();
-  const [productId, setProductData] = useState();
+  const [productData, setProductData] = useState([]);
 
+  const [allImages, setAllImages] = useState();
   useEffect(() => {
     if ( localStorage.length  ===  0 || localStorage.getItem('Email') === 'null' )
     {
@@ -21,21 +23,18 @@ const Featured = () => {
       
       setIsDisplayProduct(true);
     }
-    fetchData();
-    console.log("weeksData", weeksData);
+      fetchData();
   }, []);
 
   const fetchData = async () => {
-    let { data } = await axios.get(
-      `https://localhost:44369/api/v1/Product/GetProducts`
+    let { data } = await axios.get(`${ApiUrl}Product/GetProducts`
     );
     if (data) {
-      if (data.length > 0) {
         setWeeksData(data);
-      }
     }
   };
-  function handleOpen(e) {
+  const handleOpen =(data)=> {
+    setProductData(data);
     isDialogOpen(true);
   }
 
@@ -43,43 +42,7 @@ const Featured = () => {
     isDialogOpen(false);
   }
 
-  const uploadImg = (e) => {
-    setProductData(e.target.id);
-    console.log("thisdata", e);
-    isDialogOpen(true);
-    setProductTitle(e.target.title);
-  };
 
-  function handleUpload() {
-    var bodyFormData = new FormData();
-    bodyFormData.append("ProductImages", getFiles);
-    var id = productId;
-    axios({
-      method: "post",
-      url: `https://localhost:44369/api/v1/Product/ChangeProductImage?id=${id}`,
-      data: bodyFormData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then(function (response) {
-        //handle success
-        if (response) {
-          alert("Image updated");
-          isDialogOpen(false);
-          fetchData();
-        }
-      })
-      .catch(function (response) {
-        //handle error
-        alert("Something Went Wrong! Please try again.");
-        console.log(response);
-      });
-  }
-
-  function setFile(e) {
-    setGetFiles(e.target.files[0]);
-  }
   return (
     <section id="featured_section" className="featured_section">
       <div className="container">
@@ -93,53 +56,49 @@ const Featured = () => {
           </div>
         </div>
         <div className="featured_post animate__animated animate__delay-0.5s row justify-content-center">
-          {weeksData.length > 0 &&
+         {weeksData.length > 0 &&       
             weeksData.map((item) => (
               <div className="post_box col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                 <div className="box_content box_content_400">
                   <div className="content_img content_img_270">
-                    <img src={item.productImage} alt={item.sku}  className="h-100"/>
+                   {item.productImage != null &&
+                    <img src={item.productImage[0]} alt={item.sku}   className="h-100"/>
+                   } 
+                   {item.productImage == null &&
+                    <img src="./Assets/logo.png" alt={item.sku}   className="h-100"/>
+                   }
                   </div>
                   <div className="content_text d-flex align-items-center justify-content-between">
-                    <h4>{item.title}</h4>
-                    {isDisaplyProduct && (
-                      <span
-                        value={item}
-                        id={item.id}
-                        title={item.title}
-                        onClick={(e) => uploadImg(e)}
-                      >
-                        Edit
-                      </span>
-                    )}
+                   <div className="col-lg-8">
+                    <h4>{item.title}</h4>   
+                    </div>
+                   <div className="col-lg-4 text-right">                      
+                   {item.productImage != null &&     <p className=" mt-2 cursor-hover"  onClick={() => handleOpen(item)}>view All Images</p>   }
+                      </div>               
                   </div>
                 </div>
               </div>
             ))}
-          <Modal show={dialogOpen} onHide={handleClose}>
+           <Modal show={dialogOpen} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>{productTitle}</Modal.Title>
+              <h5>Products All Images</h5>
             </Modal.Header>
             <Modal.Body>
-              <Form.Group controlId="formFileLg" className="mb-3">
-                <Form.Label>Upload Product Image</Form.Label>
-                <Form.Control
-                  type="file"
-                  size="lg"
-                  id="upload_img"
-                  onChange={(e) => setFile(e)}
-                />
-              </Form.Group>
+                <div className="">      
+                  {productData.productImage != null &&  <div><b>{productData.title}</b><hr/></div>  } 
+                  <div className="row">
+                  {productData.productImage != null && productData.productImage.map((img)=>(
+                     <div className="col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                          <img
+                            src={img}
+                            alt={productData.title}
+                            className="h-100"
+                          />
+                          </div>
+                   ))} 
+                   </div>
+              </div>
             </Modal.Body>
-
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleUpload}>
-                Upload
-              </Button>
-            </Modal.Footer>
           </Modal>
         </div>
       </div>
